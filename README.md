@@ -411,6 +411,13 @@ var m = map[string]Vertex{
     "Google":    {37.42202, -122.08408},
 }
 
+//This is safe! You can also find a similar sample in Effective Go:
+
+for key := range m {
+    if key.expired() {
+        delete(m, key)
+    }
+}
 ```
 
 ## Structs
